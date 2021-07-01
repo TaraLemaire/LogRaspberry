@@ -3,7 +3,7 @@ import os
 from pprint import pprint
 from datetime import datetime
 
-token="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" # token de mon compte perso pour accès à distance sans Login/mdp
+token="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" # token de mon compte perso pour accès à distance sans Login/mdp
 g = Github(token) # objet sur mon compte TaraLemaire
 
 repoRasp = g.get_repo("TaraLemaire/LogRaspberry") # objet sur le dépôt "LogRaspberry"
