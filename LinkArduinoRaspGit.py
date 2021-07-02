@@ -32,7 +32,7 @@ if __name__ == '__main__':
                   answer=arduino.read()
                   if answer == 'S':
                     date=datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
-                    newContent = oldContent + "\n" + date + "/MotionDetected"
+                    newContent = oldContent + "\n" + date + "/SoundDetected"
                     repoRasp.update_file("events.log","Commit from RaspberryPI",newContent,file.sha,branch="main")
                     
                     file = repoRasp.get_contents("events.log")
