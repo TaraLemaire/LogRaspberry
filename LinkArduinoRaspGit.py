@@ -31,7 +31,7 @@ if __name__ == '__main__':
                 if arduino.inWaiting()>0:
                   answer=arduino.read()
                   if answer == 'M':
-                    date=str(datetime.now())
+                    date=datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
                     newContent = oldContent + "\n" + date + "/MotionDetected"
                     repoRasp.update_file("events.log","Commit from RaspberryPI",newContent,file.sha,branch="main")
                     
