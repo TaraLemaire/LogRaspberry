@@ -30,7 +30,7 @@ if __name__ == '__main__':
                     
                 if arduino.inWaiting()>0:
                   answer=arduino.read()
-                  if answer == 'M':
+                  if answer == 'S':
                     date=datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
                     newContent = oldContent + "\n" + date + "/MotionDetected"
                     repoRasp.update_file("events.log","Commit from RaspberryPI",newContent,file.sha,branch="main")
@@ -39,7 +39,7 @@ if __name__ == '__main__':
                     oldContent = file.decoded_content.decode() # nouveau code file.sha commit
                     
                     arduino.flushInput() # vide le buffer
-                    print(date + "/MotionDetected")
+                    print(date + "/SoundDetected")
                     print("Waiting signal from Arduino : ")
                     time.sleep(0.1) 
           except KeyboardInterrupt:
